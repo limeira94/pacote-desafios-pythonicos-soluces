@@ -57,9 +57,28 @@ import sys
 # +++ SUA SOLUÇÃO +++
 # Defina as funções print_words(filename) e print_top(filename).
 
+def print_words(filename):
+    lista = filename.lower().split()
+    ocorrencia ={}
+    for i in lista:
+        if i in ocorrencia:
+            ocorrencia[i] += 1
+        else:
+            ocorrencia[i] = 1
+    for key, value in ocorrencia.items():
+
+        print(key, value)
+
+def print_top(filename):
+    lista = filename.lower().split()
+    mais_comum = collections.Counter(lista).most_common(20)
+    for key, value in mais_comum:
+
+        print(key, value)
+
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
-# parêtros do programa.
+# paramêtros do programa.
 def main():
     if len(sys.argv) != 3:
         print('Utilização: ./13_wordcount.py {--count | --topcount} file')

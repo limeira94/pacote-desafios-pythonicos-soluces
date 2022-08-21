@@ -9,8 +9,23 @@ Irá retornar: [1, 2, 3]
 """
 
 def remove_adjacent(nums):
+
+    return [v for i,v in enumerate(nums) if nums[i] != nums[i-1] or i ==0 ]
+
+
+""" Outra solução
+
+def remove_adjacent(nums):
+
+    lista = nums[:1]
+    for i in nums[1:]:
+        if i != lista[-1]:
+            lista.append(i)
+
     # +++ SUA SOLUÇÃO +++
-    return
+
+
+    return lista"""
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

@@ -12,8 +12,39 @@ antes de combina-las.
 """
 
 def front_x(words):
-    # +++ SUA SOLUÇÃO +++
-    return
+    lista_1 = []
+    lista_2 = []
+    for word in words:
+        if word[0] == "x":
+            lista_1.append(word)
+        else:
+            lista_2.append(word)
+
+        nova_lista = sorted(lista_1) + sorted(lista_2)
+
+    return nova_lista
+
+
+
+"""def front_x(words):
+
+    lista_1 = sorted([x for x in words if x[0] == 'x'])
+    lista_2 = sorted([z for z in words if z[0] != 'x'])
+
+    return lista_1 + lista_2"""
+
+
+"""def front_x(words):
+
+    words = sorted(words)
+    for word in words:
+        if words[-1].startswith("x"):
+            words.insert(0, words.pop())
+        else:
+
+            break
+
+    return words"""
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

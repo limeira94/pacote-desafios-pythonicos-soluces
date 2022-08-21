@@ -8,10 +8,10 @@ por 'good' e retorne a string resultante.
 
 Exemplo: 'The dinner is not that bad!' retorna 'The dinner is good!'
 """
-
+import re
 def not_bad(s):
-    # +++ SUA SOLUÇÃO +++
-    return
+    s = re.sub(r'not.*bad', 'good', str(s))
+    return s
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

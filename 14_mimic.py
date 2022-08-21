@@ -38,9 +38,24 @@ Use a string vazia como a primeira palavra do texto para preparar as coisas.
 Nota: o módulo padrão do python 'random' conta com o random.choice(list),
 método que escolhe um elemento aleatório de uma lista não vazia.
 """
-
-import random
+from collections import defaultdict
+from random import choice
 import sys
+
+def list_create(filename):
+  arq = open(filename)
+  list1 = []
+  for i in arq.readlines():
+    list1.extend(i.split())
+  arq.close()
+  return list1
+
+def gera_tuplas(lista):
+  s = []
+  for i in range((len(lista)-1)):
+    a, b = lista[i], lista[i + 1]
+      s.append((a,b))
+  return s
 
 
 def mimic_dict(filename):
